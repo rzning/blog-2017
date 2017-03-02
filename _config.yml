@@ -1,0 +1,27 @@
+# # Where things are
+# source:       .                # Jekyll 读取文件的目录
+# destination:  ./_site          # Jekyll 写入文件的目录
+# plugins_dir:  _plugins         # 插件文件目录
+# layouts_dir:  _layouts         # 布局文件目录
+# data_dir:     _data            # 数据文件目录
+# includes_dir: _includes        # 包含文件目录
+
+
+# # Handling Reading
+# safe:         false
+# include:      [".htaccess"]                     # 转换时强制包含的文件或目录
+# exclude:      ["node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
+#                                                 # 转换时需排除的文件或目录（相对于网站源码目录）
+# keep_files:   [".git", ".svn"]                  # 
+# encoding:     "utf-8"                           # 文件编码
+# markdown_ext: "markdown,mkdown,mkdn,mkd,md"     # Markdown 文件扩展名
+
+title: 阮振宁 - 个人主页
+author: Rzning
+email: rzning@outlook.com
+description: >
+  The first duty of love is to listen.
+github_username: rzning
+
+
+
