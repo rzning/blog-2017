@@ -24,4 +24,7 @@ description: >
 github_username: rzning
 
 
+# Build settings
+sass:
+ style: compressed
 
