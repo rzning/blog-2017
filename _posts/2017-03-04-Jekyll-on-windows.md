@@ -87,12 +87,76 @@ share_text      : "An updated guide to setting up Jekyll 3 on Windows."
 
 # 2. Install the Jekyll Gem
 
+```sh
+> gem install jekyll bundler
+```
+
+执行上面命令将安装下列 gem 包：
+
+- `safe_yaml-1.0.4`
+- `rouge-1.11.1`
+- `forwardable-extended-2.6.0`
+- `pathutil-0.14.0`
+- `mercenary-0.3.6`
+- `liquid-3.0.6`
+- `kramdown-1.13.2`
+- `ffi-1.9.18`
+- `rb-inotify-0.9.8`
+- `rb-fsevent-0.9.8`
+- `listen-3.0.8`
+- `jekyll-watch-1.5.0`
+- `sass-3.4.23`
+- `jekyll-sass-converter-1.5.0`
+- `colorator-1.1.0`
+- `public_suffix-2.0.5`
+- `addressable-2.5.0`
+- `jekyll-3.4.1`
+- `bundler-1.14.6`
+
+使用下面命令可以安装一些现有的 Jekyll 主题 gem 包。
+```
+> gem install <jekyll-theme-name>
+```
 
 # 3. Install a Syntax Highlighter
 
 
+> GitHub Pages 默认使用 [Rouge] 实现 Jekyll's 语法高亮。
+>
+> From: [Using syntax highlighting on GitHub Pages](https://help.github.com/articles/using-syntax-highlighting-on-github-pages/)
+
+安装 [Rouge]
+
+```sh
+gem install rouge
+```
+
+添加到 `_config.yml` 配置文件
+
+```yaml
+highlighter: rouge
+```
+
+Done.
+
+[Rouge]: <http://rouge.jneen.net/>
+
 # 4. Configure Markdown
 
+- Jekyll v3.x 使用 [kramdown] 作为默认的 Markdown 引擎。
+- GitHub Pages 只支持 [kramdown] 引擎。
+
+```sh
+# install
+> gem install markdown
+```
+
+```yaml
+# _config.yml
+markdown: kramdown
+```
+
+[kramdown]: <http://kramdown.gettalong.org/>
 
 # 5. Let Jekyll --watch
 
@@ -101,3 +165,6 @@ share_text      : "An updated guide to setting up Jekyll 3 on Windows."
 
 
 
+# 参考
+
+- [Jekyll on Windows](http://jekyllrb.com/docs/windows/)
