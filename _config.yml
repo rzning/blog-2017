@@ -23,8 +23,18 @@ description: >
   The first duty of love is to listen.
 github_username: rzning
 
+encoding: utf-8
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .sass-cache
+  - README.md
+  - CNAME
 
 # Build settings
+markdown: kramdown
+
 sass:
  style: compressed
 
