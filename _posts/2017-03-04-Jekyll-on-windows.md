@@ -1,5 +1,5 @@
 ---
-layout          : null
+layout          : post
 title           : "在 Windows 平台使用 Jekyll 3"
 author          : Rzning
 date            : 2017-03-04 20:00:00

@@ -33,7 +33,10 @@ exclude:
   - CNAME
 
 # Build settings
+highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
 
 sass:
  style: compressed

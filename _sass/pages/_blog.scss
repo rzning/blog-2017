@@ -1,0 +1,17 @@
+.blog {
+    display: block;
+    margin: 0px 30px 160px;
+    padding: 12px;
+    background-color: #142;
+
+    .blog-header {
+        text-align: center;
+        color: papayawhip;
+    }
+
+    .blog-content {
+        padding: 24px;
+        background-color: whitesmoke;
+        border-radius: 30px;
+    }
+}
