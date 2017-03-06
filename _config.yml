@@ -24,6 +24,7 @@ description: >
 github_username: rzning
 
 encoding: utf-8
+timezone: Asia/Shanghai
 
 exclude:
   - Gemfile

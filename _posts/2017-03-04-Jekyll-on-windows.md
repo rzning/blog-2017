@@ -2,8 +2,9 @@
 layout          : post
 title           : "在 Windows 平台使用 Jekyll 3"
 author          : Rzning
-date            : 2017-03-04 20:00:00
-categories      : Jekyll Ruby Windows
+date            : 2017-03-04 20:00:00 +0800
+categories      : blog Jekyll
+tag             : Ruby Jekyll Windows
 share_text      : "An updated guide to setting up Jekyll 3 on Windows."
 ---
 

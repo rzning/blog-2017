@@ -2,8 +2,9 @@
 layout          : post
 title           : "Web API 本地存储"
 author          : Rzning
-date            : 2017-03-06 20:00:00
-categories      : WebAPI
+date            : 2017-03-06 20:00:00 +0800
+categories      : blog WebAPI
+tags            : WebAPI localStorage
 share_text      : "Web API Local Storage"
 ---
 
