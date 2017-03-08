@@ -27,9 +27,9 @@ Web Storage
 
 ## 存储机制
 
-- [Window].[localStorage] | 本地存储，窗口间共享（同一站点）没有过期时间（expiration time）。
+- [Window].[localStorage] - 本地存储，窗口间共享（同一站点）没有过期时间（expiration time）。
 
-- [Window].[sessionStorage] | 会话存储，单页面临时数据，在会话结束（关闭浏览器）时清除。
+- [Window].[sessionStorage] - 会话存储，单页面临时数据，在会话结束（关闭浏览器）时清除。
 
 上面两个属性都返回 [Storage] 对象。
 
@@ -39,7 +39,7 @@ Web Storage
 
 ## 属性
 
-- `length` | 数量，返回存储在 [Storage] 对象中的数据项数量。
+- `length` - 数量，返回存储在 [Storage] 对象中的数据项数量。
 
 ## 方法
 
@@ -60,7 +60,7 @@ var <value> = storage.<key>;
 
 ## 事件
 
-- `window.onstorage` | 当存储域发生改变时触发，无论是添加还是清除项都会触发。
+- `window.onstorage` - 当存储域发生改变时触发，无论是添加还是清除项都会触发。
 
 
 ## 存储位置
