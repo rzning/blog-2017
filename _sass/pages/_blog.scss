@@ -3,15 +3,47 @@
     margin: 0px 30px 160px;
     padding: 12px;
     background-color: #142;
+    font-size: 16px;
+
 
     .blog-header {
         text-align: center;
         color: papayawhip;
+
+        .blog-title {
+            font-size: 3.2em;
+        }
     }
 
     .blog-content {
         padding: 24px;
         background-color: whitesmoke;
         border-radius: 30px;
+
+        h1 {
+            font-size: 2.4em;
+            color: red;
+            border-top: 2px solid darkgray;
+            padding-top: 16px;
+        }
+        h2 {
+            font-size: 1.6em;
+            color: green;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: blue;
+        }
+
+        table {
+            line-height: 1.6em;
+        }
+
+        thead th {
+            border-bottom: 1px solid hsl(180, 0%, 10%);
+        }
+        tbody td {
+            border-bottom: 1px solid hsl(180, 0%, 80%);
+        }
     }
 }
