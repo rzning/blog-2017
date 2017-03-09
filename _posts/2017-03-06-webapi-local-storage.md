@@ -12,9 +12,11 @@ Web Storage
 ===========
 
 ****
+
 1. Web Storage API - ( localStorage, sessionStorage )
 2. Web SQL Database API
 3. Indexed Database API
+
 ****
 
 > ### W3C - storage-related specifications
