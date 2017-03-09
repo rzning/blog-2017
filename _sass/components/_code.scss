@@ -1,8 +1,21 @@
+code.highlighter-rouge {
+  background-color: powderblue;
+  line-height: 1.2em;
+  border-radius: 5px;
+  padding: 3px;
+  font-family: monospace;
+}
+
 .highlight {
-  background: #fff;
+  background: #dfe;
+  font-family: Consolas, 'Courier New', monospace;
+  padding: 6px;
+  
 
   .highlighter-rouge & {
-    background: #bdc;
+    background: #bcf;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #123;
   }
 
   .c     { color: #998; font-style: italic } // Comment
