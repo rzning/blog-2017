@@ -1,12 +1,21 @@
 .header {
-    padding:12px;
+    padding-bottom: 3px;
     font-size: 24px;
     background-color: $header-bg;
     color: $header-color;
 
-    a {
-        color:beige;
-        text-decoration: none;
+    &>div {
+        display: inline-block;
+        padding: 12px;
     }
 
+    .logo {
+        background-color: #6a4;
+        border-radius:0px 0px 24px 0px;
+        box-shadow: 1px 1px 3px #222;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
 }

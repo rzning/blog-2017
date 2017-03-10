@@ -1,8 +1,8 @@
 <header class="header">
+  <div class="logo"><a href="/">Rzning</a></div>
   <div class="container">
-    <a class="logo" href="/">Rzning</a>
     <nav class="navbar">
-      <span>site-header</span>
+      <span>{{ page.title | default:site.title }}</span>
     </nav>
   </div>
 </header>
