@@ -67,5 +67,10 @@
         tbody td {
             border-bottom: 1px solid hsl(180, 0%, 80%);
         }
+
+        blockquote img {
+            max-width: 100%;
+            border-radius: 16px;
+        }
     }
 }
