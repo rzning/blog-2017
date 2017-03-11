@@ -13,12 +13,16 @@ tag         : CDN
 
 ## BootCDN
 
-Bootstrap 中文网开源项目免费 CDN 服务。
+<iframe src="https://ghbtns.com/github-btn.html?user=bootcdn&repo=cdnjs&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
+
+[BootCDN](http://www.bootcdn.cn/) 是 [Bootstrap 中文网](http://www.bootcss.com/) 和 [又拍云](https://www.upyun.com/) 共同支持并维护的前端开源项目免费 CDN 服务。
 
 - <http://www.bootcdn.cn/>
 
 
-## CDNJS
+## cndjs
+
+<iframe src="https://ghbtns.com/github-btn.html?user=cdnjs&repo=cdnjs&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
 
 cdnjs.com - The free and open source CDN for web related libraries to speed up your website!
 
@@ -28,6 +32,8 @@ cdnjs.com - The free and open source CDN for web related libraries to speed up y
 
 ## jsDelivr
 
+<iframe src="https://ghbtns.com/github-btn.html?user=jsdelivr&repo=jsdelivr&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
+
 jsDelivr is a public open-source CDN for webmasters and developers.
 
 - <http://www.jsdelivr.com/>
@@ -36,6 +42,8 @@ jsDelivr is a public open-source CDN for webmasters and developers.
 
 
 ## 百度 CDN 库 
+
+<iframe src="https://ghbtns.com/github-btn.html?user=Clouda-team&repo=baiducdnstatic&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
 
 - <http://cdn.code.baidu.com/>
 
@@ -47,6 +55,8 @@ jsDelivr is a public open-source CDN for webmasters and developers.
 
 
 ## 七牛云 CDN 库
+
+<iframe src="https://ghbtns.com/github-btn.html?user=staticfile&repo=static&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="20px"></iframe>
 
 - <https://staticfile.org/>
 
@@ -67,7 +77,9 @@ Microsoft Ajax Content Delivery Network
 - <http://lib.sinaapp.com/>
 
 
-## 又拍云JS库加速服务
+## 又拍云 CDN 库
+
+又拍云常用 JavaScript 库加速服务
 
 - <http://jscdn.upai.com/>
 
@@ -78,7 +90,9 @@ Microsoft Ajax Content Delivery Network
 - <http://libs.useso.com/>
 
 
-## Google Hosted Libraries
+## 谷歌 CDN 库
+
+Google Hosted Libraries
 
 - <https://developers.google.com/speed/libraries/>
 
