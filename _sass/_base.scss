@@ -3,6 +3,10 @@ body {
     font-size: $font-size;
     font-family: 'Courier New', monospace;
     background-color: blanchedalmond;
+
+    main > * {
+        padding: 0px 16px;
+    }
 }
 
 a {

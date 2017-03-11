@@ -1,0 +1,17 @@
+---
+layout: demo
+title: xterm.js demo
+styles:
+- https://cdn.jsdelivr.net/xterm/2.3.2/xterm.css
+script:
+- https://cdn.jsdelivr.net/xterm/2.3.2/xterm.js
+- https://cdn.jsdelivr.net/xterm/2.3.2/addons/fit/fit.js
+---
+<h1><a href="https://xtermjs.org/">xterm.js<a></h1>
+<div id="terminal"></div>
+<script>
+  var term = new Terminal();
+  term.open(document.getElementById('#terminal'));
+  // term.fit();
+  term.write('Hello from \033[1;3;31mxterm.js\033[0m $ ');
+</script>
