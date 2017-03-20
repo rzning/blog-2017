@@ -14,7 +14,9 @@ share_text      : "A compiler for writing next generation JavaScript."
 
 [babel-core]: <https://github.com/babel/babel/tree/7.0/packages/babel-core>
 
-> [babel-core] : Babel compiler core.
+[babel-core] : Babel compiler core.
+
+> babel API 参考 : <http://babeljs.io/docs/usage/api/>
 
 ## 引入
 
