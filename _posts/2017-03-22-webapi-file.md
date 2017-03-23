@@ -93,6 +93,10 @@ function errorHandler(evt) {
 
 ## Blob
 
+构造函数
+
+- `Blob(blobParts)`
+
 ## File
 
 ## FileList
