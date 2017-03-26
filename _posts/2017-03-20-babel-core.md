@@ -3,7 +3,7 @@ layout          : post
 title           : "babel-core 编译核心包"
 author          : Rzning
 date            : 2017-03-20 20:00:00 +0800
-update          : 2017-03-20 20:00:00 +0800
+modified        : 2017-03-26 22:40:00 +0800
 categories      : blog babel
 tags            : Babel
 share_text      : "A compiler for writing next generation JavaScript."
@@ -107,18 +107,18 @@ Option | Default | Description
 `inputSourceMap`    | `null` | 一个输出源映射将基于的源映射对象
 `minified`      | `false` | 是否代码压缩
 `moduleId`      | `null` | 指定一个自定义模块 ID
-`moduleIds`     | `false` | 若为 `true` 则显式的插入模块 ID
-`moduleRoot`    | `(sourceRoot)` | 
-`only`          | `null` |
-`parserOpts`    | `{}` |
-`plugins`       | `[]` |
-`presets`       | `[]` |
-`retainLines`   | `false` |
-`resolveModuleSource`   | `null` |
-`shouldPrintComment`    | `null` |
-`sourceFileName`        | `(filenameRelative)` |
-`sourceMaps`            | `false` |
-`sourceMapTarget`       | `(filenameRelative)` |
-`sourceRoot`            | `(moduleRoot)` |
-`sourceType`            | `"module"` |
-`wrapPluginVisitorMethod` | `null` |
+`moduleIds`     | `false` | 若为 `true` 则显式的插入模块 ID 。默认情况下,所有模块都是匿名的。（不能用于 `common` 模块）
+`moduleRoot`    | `(sourceRoot)` | 可选的 AMD 模块格式化程序前缀，这将首先考虑模块定义的文件名
+`only`          | `null` | 一个 [glob](https://github.com/isaacs/minimatch), regex (正则表达式) 或包含两者的混合数组，用于 **only** 编译时匹配的路径
+`parserOpts`    | `{}` | 传递给 Babel 解析器的配置对象
+`plugins`       | `[]` | 需加载的插件列表 [plugins](http://babeljs.io/docs/plugins/)
+`presets`       | `[]` | 需加载的 [presets](http://babeljs.io/docs/plugins/#presets) （一组插件）列表
+`retainLines`   | `false` | 保留行号
+`resolveModuleSource`   | `null` | 指定一个自定义模块源
+`shouldPrintComment`    | `null` | 一个可选回调，用于控制是否输出注释
+`sourceFileName`        | `(filenameRelative)` | 设置 `sources[0]` 到返回的源映射
+`sourceMaps`            | `false` | 若为真则添加 `map` 属性到返回输出对象。
+`sourceMapTarget`       | `(filenameRelative)` | 设置 `file` 到返回的源映射
+`sourceRoot`            | `(moduleRoot)` | 指定所有源文件的相对根路径
+`sourceType`            | `"module"` | 指定需解析的代码的模式 `script` 或 `module`
+`wrapPluginVisitorMethod` | `null` | 一个可选回调可用于包装访问器方法
