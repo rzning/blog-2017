@@ -3,7 +3,7 @@ layout          : post
 title           : "JavaScript 设计模式 - 观察者模式"
 author          : Rzning
 date            : 2017-03-27 10:00:00 +0800
-modified        : 2017-03-27 13:00:00 +0800
+modified        : 2017-03-27 16:00:00 +0800
 categories      : blog javascript
 tags            : JavaScript Pattern
 ---
@@ -12,7 +12,6 @@ The Observer Pattern
 ====================
 
 
-实现一个观察者模式，通常包含下面几个组件。
 
 Component | Description
 --|--
@@ -101,6 +100,90 @@ define('Observer', [], function() {
     }
 });
 ```
+
+## 发布/订阅模式
+#### Publish/Subscribe Pattern
+
+定义一个发布订阅对象（PubSub）
+
+```js
+define('PubSub', [], function() {
+    return function() {
+        // 主题容器，用于存放不同的主题，每个订阅者可以订阅不同的主题
+        var subjects = {};
+        // 订阅者标记
+        var subUid = -1;
+
+        return {
+            /**
+             * 发布
+             */
+            publish: function(topic, args) {
+                if(!subjects[topic]) {
+                    return false;
+                }
+                setTimeout(function() {
+                    var subscribes = subjects[topic];
+                    var count = subscribers ? subscribers.length : 0;
+                    while(count--) {
+                        subscribers[count].func(topic, args);
+                    }
+                }, 0);
+                return true;
+            },
+            /**
+             * 订阅
+             */
+            subscribe: function(topic, func) {
+                if(!subjects[topic]) {
+                    subjects[topic] = [];
+                }
+                var token = (++subUid).toString();
+                subjects[topic].push({
+                    token: token,
+                    func, func
+                });
+                return token;
+            },
+            /**
+             * 退订
+             */
+            unsubscribe: function(token) {
+                for(var topic in subjects) {
+                    for(var i=0;i<subjects[topic].length;i++) {
+                        if(subjects[topic][i].token === token) {
+                            subjects[topic].splice(i, 1);
+                            return token;
+                        }
+                    }
+                }
+                return false;
+            }
+        };
+    };
+});
+```
+
+一个简单的订阅/发布示例
+
+```js
+require(['PubSub'], function(PubSub) {
+    var pubsub = new PubSub();
+    // 订阅 'ex1' 主题，返回订阅者标识
+    var subscriber = pubsub.subscribe('ex1', function(topic, data) {
+        console.log(topic+' : '+data);
+    });
+    // 发布
+    pubsub.publish('ex1', 'hello world!');
+    // 退订
+    pubsub.unsubscribe(subscriber);
+});
+```
+
+## 应用实例
+
+利用观察者模式实现事件的绑定和触发功能
+
 
 
 
