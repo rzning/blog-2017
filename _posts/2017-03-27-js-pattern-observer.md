@@ -3,7 +3,7 @@ layout          : post
 title           : "JavaScript 设计模式 - 观察者模式"
 author          : Rzning
 date            : 2017-03-27 10:00:00 +0800
-modified        : 2017-03-27 16:00:00 +0800
+modified        : 2017-03-28 20:22:00 +0800
 categories      : blog javascript
 tags            : JavaScript Pattern
 ---
@@ -71,7 +71,7 @@ define('Subject', ['ObserverList'], function(ObserverList) {
             },
             removeObserver: function(observer) {
                 var index = observers.indexOf(observer);
-                observers.removeAt();
+                observers.removeAt(index);
             },
             /**
              * 发布通知到所有观察者
@@ -182,10 +182,169 @@ require(['PubSub'], function(PubSub) {
 
 ## 应用实例
 
-利用观察者模式实现事件的绑定和触发功能
+利用观察者模式实现事件的绑定和触发功能。
 
+事件列表对象
 
+```js
+define('EventList', [], function() {
+    return function() {
+        /*{
+            'event1': [
+                function(){},
+                function(){},
+                ...
+            ],
+            'event2': [...],
+            ...
+        }*/
+        var list = {};
+        return {
+            indexOf: function(name, value) {
+                if(typeof name == 'string') {
+                    if(!(name in list)) {
+                        return -2;
+                    }
+                    if(typeof value == 'function') {
+                        var i = 0;
+                        while(i<list[name].length) {
+                            if(list[name][i] === value) {
+                                return i;
+                            }
+                            i++;
+                        }
+                        return -1;
+                    }
+                }
+                return -3;
+            },
+            add: function(name, value) {
+                var index = this.indexOf(name, value);
 
+                switch(index) {
+                    // 传入参数格式错误
+                    case -3: return -1;
+                    // 在 list 中未找到 name
+                    case -2: list[name] = [];
+                    // 在 list[name] 中未找到 value
+                    case -1: var length = list[name].push(value);
+                        return length-1;
+                    // 在 list[name] 中已经存在 value
+                    default: return index;
+                }
+            },
+            get: function(name, index) {
+                if(typeof name == 'string' && name in list) {
+                    if(typeof index == 'number') {
+                        if(index>-1 && index<list[name].length) {
+                            return list[name][index];
+                        }
+                        return null;
+                    }
+                    return list[name];
+                }
+                return null;
+            },
+            remove: function(name, value) {
+                var index = this.indexOf(name, value);
+                if(index>-1) {
+                    list[name].splice(index, 1);
+                }
+            }
+        };
+    };
+});
+```
+
+事件管理对象
+
+```js
+define('Events', ['EventList'], function(EventList) {
+    return function() {
+        var internal = {
+            on: function(obj, name, callback) {
+                if(obj && obj._events) {
+                    obj._events.add(name, callback);
+                }
+            },
+            off: function(obj, name, callback) {
+                if(obj && obj._events) {
+                    obj._events.remove(name, callback);
+                }
+            },
+            trigger: function(obj, name, args) {
+                if(obj && obj._events) {
+                    // args.unshift(obj);
+                    var handles = obj._events.get(name);
+                    if(handles) {
+                        var length = handles.length;
+                        for(var i=0;i<handles.length;i++) {
+                            handles[i].apply(obj, args);
+                        }
+                    }
+                }
+            }
+        };
+        var _events = new EventList();
+        return {
+            set _events(value) {
+            },
+            get _events() {
+                return _events;
+            },
+            /**
+             * 绑定事件 注册事件 on
+             */
+            bind: function(name, callback) {
+                internal.on(this, name, callback);
+            },
+            /**
+             * 取消绑定 off unbind
+             */
+            remove: function(name, callback) {
+                internal.off(this, name, callback);
+            },
+            /**
+             * 触发事件 trigger
+             */
+            fire: function(name) {
+                // var args = [].concat(arguments);
+                //     args.shift();
+                var length = Math.max(0, arguments.length - 1);
+                var args = Array(length);
+                for (var i = 0; i < length; i++) args[i] = arguments[i + 1];
+
+                internal.trigger(this, name, args);
+            },
+            /**
+             * 监听事件
+             */
+            listen: function(obj, name, callback) {
+                internal.on(obj, name, callback);
+            }
+        };
+    };
+});
+```
+
+使用示例
+
+```js
+require(['Events'], function(Events) {
+    var event = new Events();
+
+    function print(value) {
+        alert(value);
+    }
+
+    // 绑定事件
+    event.bind('output',print);
+    // 触发事件
+    event.fire('output', 'Hello World!');
+    // 取消绑定
+    event.remove('output', print);
+});
+```
 
 
 ## 参考
