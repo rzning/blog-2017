@@ -3,7 +3,7 @@ layout          : post
 title           : "Web API 文件操作"
 author          : Rzning
 date            : 2017-03-22 21:00:00 +0800
-update          : 2017-03-22 21:40:00 +0800
+modified        : 2017-03-30 12:10:00 +0800
 categories      : blog WebAPI
 tags            : WebAPI File Blob
 ---
@@ -95,7 +95,28 @@ function errorHandler(evt) {
 
 构造函数
 
-- `Blob(blobParts)`
+- `Blob(blobParts, options)`
+    - `array` - 数据数组
+    - `options` - 配置对象，其中 `type` 属性指定其 MIME 类型，如 `type: 'text/html'` 等，默认为 `""` 。
+
+一个使用示例：使用 `<iframe>` 请求一个由 [Blob] 数据创建的 URL 。
+
+```html
+<div id="root"></div>
+<script>
+window.addEventListener('load', function() {
+    var data = '<h3>hello iframe</h3>';
+    var blob = new Blob([data],{type:'text/html'});
+    var iframe = document.createElement('iframe');
+    var url = URL.createObjectURL(blob);
+    iframe.setAttribute('src', url);
+    document.getElementById('root').appendChild(iframe);
+}, false);
+</script>
+```
+
+其中 [URL.createObjectURL()] 静态方法接受一个 [Blob] 或 [File] 对象，将其转换为可通过路径访问的 [URL] 对象，并返回对应路径字符串。在每次调用 [URL.createObjectURL()] 方法时都会创建一个新的 [URL] 对象，若想获得最佳性能和内存使用，推荐在不使用时调用 [URL.revokeObjectURL()] 方法将其释放，其参数为相应 [URL] 对象访问路径字符串。
+
 
 ## File
 
@@ -114,3 +135,6 @@ function errorHandler(evt) {
 [Blob]: <https://developer.mozilla.org/en-US/docs/Web/API/Blob>
 [File]: <https://developer.mozilla.org/en-US/docs/Web/API/File>
 [FileReader]: <https://developer.mozilla.org/en-US/docs/Web/API/FileReader>
+[URL]: <https://developer.mozilla.org/en-US/docs/Web/API/URL>
+[URL.createObjectURL()]: <https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL>
+[URL.revokeObjectURL()]: <https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL>
