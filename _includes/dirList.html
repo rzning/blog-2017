@@ -1,0 +1,13 @@
+<ul>
+{% for item_hash in list %}
+{% assign name = item_hash[0] %}
+{% assign item = item_hash[1] %}
+  <li>
+    {{ name }} --> {% if item != nil %} {{ item }} {% else %} 空 {% endif %}
+
+    {% assign list = item %}
+    {% include dirList.html %}
+  </li>
+{% endfor %}
+</ul>
+

@@ -1,13 +1,21 @@
 ---
 layout  : note
+title   : data test
 ---
 
 ### test
 
-{% for item_hash in site.data.notes %}
-{% assign item = item_hash[1] %}
+{{ site.time }}
 
-- {{ item.name }}
+{% assign test = "{{ site.time }}" %} {{ test }}
 
-{% endfor %}
+{% raw %} {{ site.time }} {% endraw %}
+
+<hr/>
+
+{% assign list = site.data.notes %}
+{% include dirList.html %}
+
+
+
 
