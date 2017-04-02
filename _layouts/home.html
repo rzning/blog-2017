@@ -7,9 +7,12 @@ layout: default
     {% for post in site.posts %}
       <li>
         <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <h3>
+        {% if post.modified %}
+        <span>({{ post.modified | date: "%Y-%m-%d" }})</span>
+        {% endif %}
+        <p>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h3>
+        </p>
       </li>
     {% endfor %}
   </ul>
