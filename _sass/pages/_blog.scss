@@ -2,7 +2,8 @@
     display: block;
     margin: 0px;
     padding: 1px 12px 160px;
-    background-color: #369;
+    background-color: #123;
+    color: #def;
     font-size: 16px;
 
     word-wrap: break-word;
@@ -19,32 +20,34 @@
 
     .blog-content {
         padding: 24px;
-        background-color: whitesmoke;
+        // background-color: whitesmoke;
+        border: 1px solid;
         border-radius: 30px;
 
         margin: auto;
         max-width: 900px;
 
-        h1 {
-            font-size: 2.4em;
-            color: red;
-            border-bottom: 2px solid #633;
-            padding-top: 16px;
+        a { color: #9c6; }
 
-            &:first-child {
-                border-bottom: none;
-            }
+        h1,h2,h3,h4,h5,h6 {
+            margin: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
         }
-        h2 {
-            padding: 9px;
-            font-size: 1.6em;
-            color: green;
-            border-bottom: 1px solid #363;
+        h1,h2 {
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid #ccc;
         }
-        h3 {
-            font-size: 1.4em;
-            color: blue;
+        h1:first-child {
+            border-bottom: none;
         }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.25em; }
+        h4 { font-size: 1em; }
+        h5 { font-size: 0.875em; }
+        h6 { font-size: 0.85em; color: #666; }
 
         ul, pre {
             overflow-x: auto;
@@ -66,6 +69,14 @@
         }
         tbody td {
             border-bottom: 1px solid hsl(180, 0%, 80%);
+        }
+
+        blockquote {
+            padding: 0 0.75em;
+            color: #666;
+            border-left: 0.25em solid #ccc;
+            >:first-child { margin-top: 0; }
+            >:last-child { margin-bottom: 0; }
         }
 
         blockquote img {
