@@ -1,5 +1,4 @@
 ---
-layout: home
+layout: home.bootstrap
 ---
-[DEMO](/demo)
 

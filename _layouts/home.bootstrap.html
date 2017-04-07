@@ -1,0 +1,54 @@
+---
+layout: ~
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://rzning.com">Rzning</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Blog</a></li>
+          <li><a href="http://demo.rzning.com">Demo</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container" style="margin-top:70px;">
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+          {% if post.modified %}
+          <span>({{ post.modified | date: "%Y-%m-%d" }})</span>
+          {% endif %}
+          <p>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="container">
+    {{ content }}
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
