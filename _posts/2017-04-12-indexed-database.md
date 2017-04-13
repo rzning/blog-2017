@@ -28,9 +28,34 @@ Web IndexedDB
 
 ## 1. 侦测浏览器对数据库的支持
 
-```
+```js
+var indexedDB = window.indexedDB || window.webkitIndexedDB ||
+                window.mozIndexedDB || window.msIndexedDB || false;
+var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange ||
+                window.mozIDBKeyRange || window.msIDBKeyRange || false;
+var webSQLSupport = ('openDatabase' in window);
 ```
 
+## 2. 连接到 IndexedDB 数据库
+
+使用 IndexedDB 的 `open` 方法，可以创建或连接到一个 IndexedDB 数据库。
+
+```js
+var db;
+function openDB() {
+    if(indexedDB) {
+        // 创建或连接数据库，并返回与该数据库的连接。
+        // open(name, version) 返回 IDBRequest 对象
+        var request = indexedDB.open('Mobs', 1);
+        // 用于检测浏览器是否支持 `upgradeNeeded` 事件
+        var upgradeNeeded = ('onupgradeneeded' in request);
+        request.addEventListener('success', function(e) {
+            db = e.target.result;
+            //
+        }, false);
+    }
+}
+```
 
 
 
