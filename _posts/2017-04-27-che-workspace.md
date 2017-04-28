@@ -17,11 +17,28 @@ Eclipse Che Workspace
 
 ## Workspace 激活
 
-### 1. 创建一个生产运行时工作空间
+### 创建一个生产运行时工作空间
 
 - 一个 Docker 镜像或“菜谱（recipe）”，例如 `Dockerfile` / `Composefile`
 - 运行时（Runtimes）可以继承自其他类型的“机器（machines）”例如 SSH
 - 创建镜像，若有必要，使用额外的 run + volume mount 参数
+- 提供许多预定义的 Docker 组件和镜像运行时栈
+
+### 从版本控制引入项目
+
+- Clone - 复制
+- Mount - 挂载
+- Rsync - 同步
+
+## 工作空间模型
+
+- 环境（Environments）
+- 代理（Agents）
+- 项目（Projects）
+- 命令（Commands）
+- 集成开发环境（IDEs）
+
+
 
 
 
